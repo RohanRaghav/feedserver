@@ -8,7 +8,15 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(bodyParser.json()); // Updated to parse JSON
-app.use(cors());
+const corsOptions = {
+    origin: 'https://feedback-orcin-seven.vercel.app',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+  };
+  
+  app.use(cors(corsOptions));
+  app.use(bodyParser.urlencoded({ extended: true }));
+  
 
 const mongoUri = process.env.MONGODB_URI;
 mongoose.connect(mongoUri, {
