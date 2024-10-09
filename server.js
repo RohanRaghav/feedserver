@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 const corsOptions = {
-    origin: ['http://localhost:3000', 'http://localhost:3002'],
+    origin: ['http://localhost:3000', 'https://cacclub.in'],
     methods: ['GET', 'POST', 'PATCH'],
     allowedHeaders: ['Content-Type'],
 };
